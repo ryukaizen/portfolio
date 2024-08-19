@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <h3 className="header-mini">
-        Hey there, <span className="header-italic">you've stumbled upon the portfolio of...</span>
+        Hey there, <span className="header-italic">you&apos;ve stumbled upon the portfolio of...</span>
       </h3>
 
       <span className="header-name"> <Image
