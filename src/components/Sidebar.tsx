@@ -11,20 +11,24 @@ const Sidebar = () => {
         { href: "/contact", label: "Contact" }
     ];
 
-    const [activeIndex, setActiveIndex] = useState(0); 
+    const [activeIndex, setActiveIndex] = useState(0);
     const radius = 30;
+    const totalItems = items.length;
 
     const handleDialerClick = (index: React.SetStateAction<number>) => {
-        setActiveIndex(index); 
+        setActiveIndex(index);
     };
 
     return (
         <div className={styles.sidebar}>
             <div className={styles.dialer}>
                 {items.map((item, index) => {
-                    const angle = (index / items.length) * 2 * Math.PI;
+                    const angle = (index / totalItems) * 2 * Math.PI;
                     const x = 50 + radius * Math.cos(angle - Math.PI / 2);
                     const y = 50 + radius * Math.sin(angle - Math.PI / 2);
+
+                    const rotation = index === activeIndex ? `rotate(${(index * (360 / totalItems))}deg)` : '';
+
                     return (
                         <div
                             key={item.href}
@@ -32,7 +36,7 @@ const Sidebar = () => {
                             style={{
                                 top: `${y}%`,
                                 left: `${x}%`,
-                                transform: `translate(-50%, -50%)`
+                                transform: `translate(-50%, -50%) ${rotation}`
                             }}
                             onClick={() => handleDialerClick(index)}
                         >

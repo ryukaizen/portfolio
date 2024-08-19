@@ -3,9 +3,9 @@
     top: 50%;
     right: 80%;
     transform: translateY(-50%);
-    width: 200px;
-    height: 200px;
-    background-color: rgba(255, 158, 158, 0.197);
+    width: 300px;
+    height: 300px;
+    background-color: rgba(85, 66, 66, 0.304);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -21,21 +21,23 @@
 
 .dialerItem {
     position: absolute;
-    width: 60px;
-    height: 60px;
+    width: 120px; 
+    height: 120px; 
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
-    transition: background-color 0.3s ease, transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease;
 }
 
 .dialerItem.active {
-    width: 80px;
-    height: 40px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.6);
+    width: 50px;
+    height: 0;
+    background-color: rgba(0, 242, 255, 0.6); 
+    clip-path: polygon(50% 100%, -150% -100%, 150% 0%); 
+    border: 60px solid transparent;
+    transform: translate(-50%, -50%) rotate(calc(360deg / 4 * var(--index)));
 }
 
 .dialerItem a {
