@@ -1,3 +1,5 @@
+"use client";
+import React, { useState } from 'react';
 import Link from 'next/link';
 import styles from '../styles/sidebar.module.css';
 
@@ -9,7 +11,12 @@ const Sidebar = () => {
         { href: "/contact", label: "Contact" }
     ];
 
-    const radius = 25; 
+    const [activeIndex, setActiveIndex] = useState(0); 
+    const radius = 30;
+
+    const handleDialerClick = (index: React.SetStateAction<number>) => {
+        setActiveIndex(index); 
+    };
 
     return (
         <div className={styles.sidebar}>
@@ -21,12 +28,13 @@ const Sidebar = () => {
                     return (
                         <div
                             key={item.href}
-                            className={styles.dialerItem}
+                            className={`${styles.dialerItem} ${index === activeIndex ? styles.active : ''}`}
                             style={{
                                 top: `${y}%`,
                                 left: `${x}%`,
                                 transform: `translate(-50%, -50%)`
                             }}
+                            onClick={() => handleDialerClick(index)}
                         >
                             <Link href={item.href}>{item.label}</Link>
                         </div>
