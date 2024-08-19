@@ -15,7 +15,7 @@ const Sidebar = () => {
     const radius = 30;
     const totalItems = items.length;
 
-    const handleDialerClick = (index: React.SetStateAction<number>) => {
+    const handleDialerClick = (index: number) => {
         setActiveIndex(index);
     };
 
@@ -30,8 +30,9 @@ const Sidebar = () => {
                     const rotation = index === activeIndex ? `rotate(${(index * (360 / totalItems))}deg)` : '';
 
                     return (
-                        <div
+                        <Link
                             key={item.href}
+                            href={item.href}
                             className={`${styles.dialerItem} ${index === activeIndex ? styles.active : ''}`}
                             style={{
                                 top: `${y}%`,
@@ -40,8 +41,8 @@ const Sidebar = () => {
                             }}
                             onClick={() => handleDialerClick(index)}
                         >
-                            <Link href={item.href}>{item.label}</Link>
-                        </div>
+                            {item.label}
+                        </Link>
                     );
                 })}
             </div>

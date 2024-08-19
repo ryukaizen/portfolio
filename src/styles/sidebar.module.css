@@ -29,6 +29,14 @@
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+}
+
+.dialerItem:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .dialerItem.active {
@@ -37,7 +45,6 @@
     background-color: rgba(0, 242, 255, 0.6); 
     clip-path: polygon(50% 100%, -150% -100%, 150% 0%); 
     border: 60px solid transparent;
-    transform: translate(-50%, -50%) rotate(calc(360deg / 4 * var(--index)));
 }
 
 .dialerItem a {
