@@ -71,10 +71,10 @@ body::before {
 }
 
 .header-mini {
-  font-size: 25px;
+  font-size: 40px;
   position: fixed;
   top: 20%;
-  left: 35%;
+  left: 28%;
   width: auto; 
   padding: 1rem;
   z-index: 1000;
@@ -85,7 +85,7 @@ body::before {
 .header-italic {
   color: rgba(136, 161, 161, 0.375);
   font-style: italic;
-  font-size: 25px;
+  font-size: 30px;
   margin-left: 0.5rem; 
   display: inline-flex; 
   align-items: center;
@@ -112,3 +112,15 @@ body::before {
     text-wrap: balance;
   }
 }
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+.header-italic {
+  animation: fadeIn 3s ease-in-out 0.5s;
+  display: inline-block;
+}
+

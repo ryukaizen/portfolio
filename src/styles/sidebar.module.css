@@ -57,3 +57,13 @@
     font-size: 14px;
     text-align: center;
 }
+
+@keyframes rotate {
+    20% { transform: rotate(40deg); }
+    40% { transform: rotate(80deg); }
+    60% { transform: rotate(0deg); }
+}
+
+.sidebar {
+    animation: rotate linear 2s;
+}
