@@ -70,6 +70,43 @@ body::before {
   left: 30vw;
 }
 
+.header-mini {
+  font-size: 25px;
+  position: fixed;
+  top: 20%;
+  left: 35%;
+  width: auto; 
+  padding: 1rem;
+  z-index: 1000;
+  display: inline-flex; 
+  align-items: center;
+}
+
+.header-italic {
+  color: rgba(136, 161, 161, 0.375);
+  font-style: italic;
+  font-size: 25px;
+  margin-left: 0.5rem; 
+  display: inline-flex; 
+  align-items: center;
+}
+
+.header-name {
+  font-size: 8rem;
+  position: fixed;
+  top: 34%;
+  left: 32%;
+  width: auto; 
+  padding: 1rem;
+  z-index: 1000;
+  display: inline-flex; 
+  align-items: center;
+}
+
+.header-name h1 {
+  margin-left: 2rem; 
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
