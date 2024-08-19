@@ -1,5 +1,8 @@
 import './globals.css';
 import Sidebar from '../components/Sidebar';
+import { Tilt_Warp } from "next/font/google";
+
+const font = Tilt_Warp({ weight: "400", subsets: ["latin-ext"] });
 
 export const metadata = {
     title: 'Akash Dalvi - Portfolio',
@@ -13,7 +16,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body>
+            <body className={`${font.className}`}>
                 <div style={{ display: 'flex' }}>
                 <div className="fixed inset-0 z-[-1] overflow-hidden">
                     <div className="glow-circle glow-circle-1"></div>
