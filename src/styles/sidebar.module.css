@@ -1,0 +1,44 @@
+.sidebar {
+    position: fixed;
+    top: 50%;
+    right: 80%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 158, 158, 0.197);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.dialerItem {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dialerItem:hover {
+    background-color: rgba(255, 255, 255, 0.566);
+    transform: scale(1.1);
+}
+
+.dialerItem a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+}

@@ -3,27 +3,70 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+  --glow-rgb: 255, 255, 255;
+  --glow-1-rgb: 255, 0, 0;
+  --glow-2-rgb: 255, 0, 127;
+  --glow-3-rgb: 51, 153, 255;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: rgb(var(--background-rgb));
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(
+    circle,
+    rgba(var(--glow-rgb), 0.3) 0%,
+    rgba(var(--glow-rgb), 0.1) 30%,
+    rgba(var(--background-rgb), 0) 70%
+  );
+  pointer-events: none;
+}
+
+.glow-circle {
+  position: absolute;
+  border-radius: 100%;
+  filter: blur(0px);
+  opacity: 0.20;
+}
+
+.glow-circle-1 {
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(var(--glow-1-rgb), 0.8) 0%, rgba(var(--glow-1-rgb), 0) 70%);
+  top: 10%;
+  left: 10%;
+}
+
+.glow-circle-2 {
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(var(--glow-2-rgb), 0.8) 0%, rgba(var(--glow-2-rgb), 0) 70%);
+  top: 10%;
+  left: 60%;
+}
+
+.glow-circle-3 {
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(var(--glow-3-rgb), 0.8) 0%, rgba(var(--glow-3-rgb), 0) 70%);
+  top: 50%;
+  left: 30%;
 }
 
 @layer utilities {
