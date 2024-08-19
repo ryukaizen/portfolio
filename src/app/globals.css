@@ -107,6 +107,18 @@ body::before {
   margin-left: 2rem; 
 }
 
+.page-title {
+  font-size: 35px;
+  position: fixed;
+  top: 3%;
+  left: 45%;
+  width: auto; 
+  padding: 1rem;
+  z-index: 1000;
+  display: inline-flex; 
+  align-items: center;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
