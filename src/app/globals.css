@@ -39,34 +39,35 @@ body::before {
 }
 
 .glow-circle {
-  position: absolute;
+  position: fixed;
   border-radius: 100%;
   filter: blur(0px);
   opacity: 0.20;
+  pointer-events: none;
 }
 
 .glow-circle-1 {
-  width: 900px;
-  height: 900px;
+  width: 46.875vw;  
+  height: 46.875vw;
   background: radial-gradient(circle, rgba(var(--glow-1-rgb), 0.8) 0%, rgba(var(--glow-1-rgb), 0) 70%);
-  top: 10%;
-  left: 10%;
+  top: 10vh;
+  left: 10vw;
 }
 
 .glow-circle-2 {
-  width: 800px;
-  height: 800px;
+  width: 41.667vw; 
+  height: 41.667vw; 
   background: radial-gradient(circle, rgba(var(--glow-2-rgb), 0.8) 0%, rgba(var(--glow-2-rgb), 0) 70%);
-  top: 10%;
-  left: 60%;
+  top: 10vh;
+  left: 60vw;
 }
 
 .glow-circle-3 {
-  width: 800px;
-  height: 800px;
+  width: 41.667vw;  
+  height: 41.667vw; 
   background: radial-gradient(circle, rgba(var(--glow-3-rgb), 0.8) 0%, rgba(var(--glow-3-rgb), 0) 70%);
-  top: 50%;
-  left: 30%;
+  top: 50vh;
+  left: 30vw;
 }
 
 @layer utilities {
